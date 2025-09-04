@@ -35,7 +35,7 @@
     },
     "about": {
       "title": "About Me",
-      "subtitle": "Engineer. Motion nerd. Product thinker."
+      "subtitle": "Engineer. Product thinker."
     },
     "contact": {
       "title": "Let's Connect",
@@ -43,7 +43,7 @@
     }
   },
   "about": {
-    "title": "Engineer. Motion nerd. Product thinker.",
+    "title": "Engineer. Product thinker.",
     "description1": "I craft fast, accessible interfaces with a big focus on motion, micro‑interactions, and design systems. I love turning ambiguous product ideas into polished experiences that users actually enjoy using.",
     "description2": "When I'm not coding, you'll find me exploring new technologies, contributing to open source, or perfecting my coffee brewing technique. I believe great software should feel like magic ✨",
     "availableForHire": "Available for hire! 🚀",
