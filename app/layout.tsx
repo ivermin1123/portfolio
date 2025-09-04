@@ -95,6 +95,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-site-verification"
+          content="XK1SmGtmdwvEc5MMQ48bn65an3iMGt0couYZlKKWimQ"
+        />
         <StructuredData />
       </head>
       <body suppressHydrationWarning>
