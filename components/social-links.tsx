@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 
 export default function SocialLinks() {
   return (
@@ -18,6 +18,14 @@ export default function SocialLinks() {
         rel="noreferrer"
       >
         <Linkedin className="h-5 w-5" />
+      </a>
+      <a
+        className="rounded-md p-2 hover:bg-accent/10 dark:hover:bg-accent/10 hover:bg-gray-100 text-gray-700 dark:text-white"
+        href="https://instagram.com/ivermin1123"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Instagram className="h-5 w-5" />
       </a>
     </div>
   );

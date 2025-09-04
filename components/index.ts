@@ -34,6 +34,9 @@ export * from "./analytics";
 // SEO components
 export * from "./seo";
 
+// PDF components
+export * from "./pdf";
+
 // UI components (keep as is)
 export { Badge } from "./ui/badge";
 export { Button } from "./ui/button";

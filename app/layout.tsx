@@ -5,6 +5,7 @@ import { ClientLayout, StructuredData, VercelAnalytics } from "@/components";
 import { SITE } from "@/lib/seo";
 
 import "./globals.css";
+import "./pdf-viewer.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   },
   other: {
     "linkedin:profile": "https://linkedin.com/in/ivermin1123",
-    "facebook:profile": "https://facebook.com/yivermin1123",
+    "facebook:profile": "https://facebook.com/ivermin1123",
     "instagram:profile": "https://instagram.com/ivermin1123",
     "profile:linkedin": "https://linkedin.com/in/ivermin1123",
     "profile:facebook": "https://facebook.com/ivermin1123",
