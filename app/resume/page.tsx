@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { Section } from "@/components";
-import { useState, useEffect } from "react";
 
 export default function ResumePage() {
   const [pdfError, setPdfError] = useState(false);
@@ -37,7 +38,7 @@ export default function ResumePage() {
             </div>
           </div>
         )}
-        
+
         {!pdfError ? (
           <object
             data="/HoangLe_CV_Frontend.pdf"
@@ -64,7 +65,9 @@ export default function ResumePage() {
         ) : (
           <div className="flex h-full items-center justify-center bg-gray-50">
             <div className="text-center">
-              <p className="text-gray-600 mb-4">PDF preview is not available in this environment.</p>
+              <p className="text-gray-600 mb-4">
+                PDF preview is not available in this environment.
+              </p>
               <a
                 className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 href="/HoangLe_CV_Frontend.pdf"
@@ -77,7 +80,7 @@ export default function ResumePage() {
           </div>
         )}
       </div>
-      
+
       <div className="mt-4 space-y-2">
         <p className="text-sm text-muted-foreground">
           If the embedded PDF doesn&apos;t load,{" "}
