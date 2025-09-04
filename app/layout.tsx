@@ -1,9 +1,7 @@
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
-import { ClientLayout } from "@/components";
+import { ClientLayout, VercelAnalytics } from "@/components";
 import { SITE } from "@/lib/seo";
 
 import "./globals.css";
@@ -73,8 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <ClientLayout>{children}</ClientLayout>
         </ThemeProvider>
-        <SpeedInsights />
-        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );

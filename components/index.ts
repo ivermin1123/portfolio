@@ -28,6 +28,9 @@ export * from "./effects";
 // Interactive components
 export * from "./interactive";
 
+// Analytics components
+export * from "./analytics";
+
 // UI components (keep as is)
 export { Badge } from "./ui/badge";
 export { Button } from "./ui/button";
