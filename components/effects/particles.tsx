@@ -10,11 +10,12 @@ export default function Particles() {
     let raf = 0;
     let w = (c.width = window.innerWidth);
     const h = (c.height = 320);
-    const dots = Array.from({ length: 60 }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
+    // Use deterministic positioning to avoid hydration issues
+    const dots = Array.from({ length: 60 }, (_, i) => ({
+      x: (i * 17.3) % w,
+      y: (i * 23.7) % h,
+      vx: (((i * 0.1) % 1) - 0.5) * 0.4,
+      vy: (((i * 0.15) % 1) - 0.5) * 0.4,
     }));
     const step = () => {
       if (!ctx) return;

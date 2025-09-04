@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Send email to your inbox
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>", // You'll need to verify your domain
       to: [process.env.CONTACT_EMAIL || "ivermin1123@gmail.com"], // Your email address
       subject: `New message from ${name} via Portfolio`,

@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -18,19 +18,6 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
   useEffect(() => {
     onCompleteRef.current = onComplete;
   }, [onComplete]);
-
-  const handleComplete = useCallback(() => {
-    if (!mountedRef.current) return;
-
-    setIsComplete(true);
-
-    // Small delay before calling onComplete to allow exit animation
-    setTimeout(() => {
-      if (mountedRef.current) {
-        onCompleteRef.current();
-      }
-    }, 500);
-  }, []);
 
   // Start loading animation
   useEffect(() => {
@@ -61,9 +48,9 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
       const easedProgress = 1 - Math.pow(1 - timeProgress, 3);
       let progress = easedProgress * 100;
 
-      // Add some randomness to make it feel more realistic
-      const randomVariation = (Math.random() - 0.5) * 1; // -0.5 to 0.5
-      progress = Math.max(0, Math.min(100, progress + randomVariation));
+      // Add some deterministic variation to make it feel more realistic
+      const variation = Math.sin(elapsed * 0.01) * 0.5; // Deterministic variation
+      progress = Math.max(0, Math.min(100, progress + variation));
 
       setLoadingProgress(progress);
 

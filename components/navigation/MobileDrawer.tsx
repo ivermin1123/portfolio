@@ -4,11 +4,10 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronRight, Command, Mail, Search, X } from "lucide-react";
+import { ChevronRight, Mail, Search, X } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
 
 interface MobileDrawerProps {
   isOpen: boolean;

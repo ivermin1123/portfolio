@@ -7,6 +7,15 @@ export default function FloatingLayers() {
   const { scrollY } = useScroll();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHydrated, setIsHydrated] = useState(false);
+  const [particleData, setParticleData] = useState<
+    Array<{
+      id: number;
+      left: number;
+      top: number;
+      duration: number;
+      delay: number;
+    }>
+  >([]);
 
   // Parallax transforms
   const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
@@ -16,6 +25,16 @@ export default function FloatingLayers() {
 
   useEffect(() => {
     setIsHydrated(true);
+
+    // Generate stable particle data only on client
+    const particles = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      left: (i * 7.3) % 100, // Deterministic positioning
+      top: (i * 11.7) % 100,
+      duration: 4 + ((i * 0.3) % 3),
+      delay: (i * 0.2) % 2,
+    }));
+    setParticleData(particles);
 
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -177,13 +196,13 @@ export default function FloatingLayers() {
       </svg>
 
       {/* Floating particles */}
-      {Array.from({ length: 20 }).map((_, i) => (
+      {particleData.map(particle => (
         <motion.div
-          key={i}
+          key={particle.id}
           className="absolute w-1 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
           }}
           animate={{
             y: [0, -30, 0],
@@ -191,9 +210,9 @@ export default function FloatingLayers() {
             scale: [0.5, 1, 0.5],
           }}
           transition={{
-            duration: 4 + Math.random() * 3,
+            duration: particle.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: particle.delay,
             ease: "easeInOut",
           }}
         />

@@ -9,7 +9,7 @@ type Locale = {
 
 type LocaleContextType = {
   currentLocale: Locale;
-  setCurrentLocale: (locale: Locale) => void;
+  setCurrentLocale: (_locale: Locale) => void;
   locales: Locale[];
 };
 
@@ -27,7 +27,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     // Load saved locale from localStorage
     const savedLocale = localStorage.getItem("locale");
     if (savedLocale) {
-      const found = locales.find(locale => locale.code === savedLocale);
+      const found = locales.find(_locale => _locale.code === savedLocale);
       if (found) {
         setCurrentLocale(found);
       }

@@ -4,10 +4,14 @@ import { useEffect, useRef, useState } from "react";
 export default function MagneticCursor() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ticking = false;
+
+    // Check if desktop on client side only
+    setIsDesktop(window.innerWidth >= 768);
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!ticking) {
@@ -43,7 +47,7 @@ export default function MagneticCursor() {
   }, []);
 
   // Don't render on mobile
-  if (typeof window !== "undefined" && window.innerWidth < 768) {
+  if (!isDesktop) {
     return null;
   }
 

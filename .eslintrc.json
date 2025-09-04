@@ -69,6 +69,22 @@
     "spaced-comment": ["error", "always"],
     "no-console": "warn",
     "prefer-const": "error",
-    "no-var": "error"
+    "no-var": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "no-unused-expressions": "error",
+    "no-unreachable": "error",
+    "no-unreachable-loop": "error",
+    "no-constant-condition": "error",
+    "no-duplicate-imports": "error",
+    "import/no-duplicates": "error"
   }
 }

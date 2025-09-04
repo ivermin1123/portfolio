@@ -83,7 +83,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   }, []);
 
   // Handle errors
-  const handleError = useCallback((error: Error) => {
+  const _handleError = useCallback((error: Error) => {
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
       console.error("ClientLayout error:", error);

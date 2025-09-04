@@ -1,11 +1,14 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Download, RotateCw } from "lucide-react";
+import { useState } from "react";
 
-// Configure PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+import { Viewer, Worker } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { Download } from "lucide-react";
+
+// Import the styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
 interface PDFViewerProps {
   file: string;
@@ -13,53 +16,24 @@ interface PDFViewerProps {
 }
 
 export function PDFViewer({ file, className = "" }: PDFViewerProps) {
-  const [numPages, setNumPages] = useState<number>(0);
-  const [pageNumber, setPageNumber] = useState<number>(1);
-  const [scale, setScale] = useState<number>(1.0);
-  const [rotation, setRotation] = useState<number>(0);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-    setIsLoading(false);
-    setError(null);
-  }, []);
+  // Create default layout plugin
+  const defaultLayoutPluginInstance = defaultLayoutPlugin({
+    sidebarTabs: defaultTabs => [
+      defaultTabs[0], // Thumbnail tab
+      defaultTabs[1], // Bookmark tab
+    ],
+  });
 
-  const onDocumentLoadError = useCallback((error: Error) => {
-    console.error("PDF load error:", error);
-    setError("Failed to load PDF. Please try again or download the file.");
-    setIsLoading(false);
-  }, []);
-
-  const goToPrevPage = useCallback(() => {
-    setPageNumber((prev) => Math.max(prev - 1, 1));
-  }, []);
-
-  const goToNextPage = useCallback(() => {
-    setPageNumber((prev) => Math.min(prev + 1, numPages));
-  }, [numPages]);
-
-  const zoomIn = useCallback(() => {
-    setScale((prev) => Math.min(prev + 0.2, 3.0));
-  }, []);
-
-  const zoomOut = useCallback(() => {
-    setScale((prev) => Math.max(prev - 0.2, 0.5));
-  }, []);
-
-  const rotate = useCallback(() => {
-    setRotation((prev) => (prev + 90) % 360);
-  }, []);
-
-  const downloadPDF = useCallback(() => {
+  const downloadPDF = () => {
     const link = document.createElement("a");
     link.href = file;
     link.download = "HoangLe_CV_Frontend.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }, [file]);
+  };
 
   if (error) {
     return (
@@ -101,97 +75,30 @@ export function PDFViewer({ file, className = "" }: PDFViewerProps) {
   }
 
   return (
-    <div className={`flex flex-col h-[80vh] bg-white rounded-2xl border overflow-hidden ${className}`}>
-      {/* PDF Controls */}
-      <div className="flex items-center justify-between p-4 border-b bg-gray-50">
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={goToPrevPage}
-            disabled={pageNumber <= 1}
-            className="p-2 rounded-md hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            aria-label="Previous page"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          
-          <span className="text-sm font-medium">
-            {pageNumber} of {numPages}
-          </span>
-          
-          <button
-            onClick={goToNextPage}
-            disabled={pageNumber >= numPages}
-            className="p-2 rounded-md hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            aria-label="Next page"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={zoomOut}
-            className="p-2 rounded-md hover:bg-gray-200 transition-colors"
-            aria-label="Zoom out"
-          >
-            <ZoomOut className="h-4 w-4" />
-          </button>
-          
-          <span className="text-sm font-medium min-w-[3rem] text-center">
-            {Math.round(scale * 100)}%
-          </span>
-          
-          <button
-            onClick={zoomIn}
-            className="p-2 rounded-md hover:bg-gray-200 transition-colors"
-            aria-label="Zoom in"
-          >
-            <ZoomIn className="h-4 w-4" />
-          </button>
-          
-          <button
-            onClick={rotate}
-            className="p-2 rounded-md hover:bg-gray-200 transition-colors"
-            aria-label="Rotate"
-          >
-            <RotateCw className="h-4 w-4" />
-          </button>
-          
-          <button
-            onClick={downloadPDF}
-            className="p-2 rounded-md hover:bg-gray-200 transition-colors"
-            aria-label="Download PDF"
-          >
-            <Download className="h-4 w-4" />
-          </button>
-        </div>
+    <div className={`h-[80vh] bg-white rounded-2xl border overflow-hidden ${className}`}>
+      {/* Custom Download Button */}
+      <div className="flex justify-end p-2 border-b bg-gray-50">
+        <button
+          onClick={downloadPDF}
+          className="flex items-center space-x-2 px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          aria-label="Download PDF"
+        >
+          <Download className="h-4 w-4" />
+          <span>Download</span>
+        </button>
       </div>
 
-      {/* PDF Content */}
-      <div className="flex-1 overflow-auto bg-gray-100 flex items-center justify-center p-4">
-        {isLoading && (
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading PDF...</p>
-          </div>
-        )}
-        
-        <Document
-          file={file}
-          onLoadSuccess={onDocumentLoadSuccess}
-          onLoadError={onDocumentLoadError}
-          loading=""
-          error=""
-        >
-          <Page
-            pageNumber={pageNumber}
-            scale={scale}
-            rotate={rotation}
-            className="shadow-lg"
-            loading=""
-            error=""
+      {/* PDF Viewer */}
+      <div className="h-[calc(100%-3rem)]">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.0.279/build/pdf.worker.min.js">
+          <Viewer
+            fileUrl={file}
+            plugins={[defaultLayoutPluginInstance]}
+            onDocumentLoad={() => {
+              setError(null);
+            }}
           />
-        </Document>
+        </Worker>
       </div>
     </div>
   );

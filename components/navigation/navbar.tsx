@@ -11,11 +11,9 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-
 // Lazy load components
 const MobileDrawer = dynamic(() => import("./MobileDrawer"), { ssr: false });
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), { ssr: false });
-const LocaleSwitcher = dynamic(() => import("./LocaleSwitcher"), { ssr: false });
 
 const navLinks = [
   { href: "/work", label: "Work" },
@@ -29,11 +27,11 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const [_isScrollingDown, setIsScrollingDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const [activeSection, setActiveSection] = useState("");
+  const [_activeSection, setActiveSection] = useState("");
 
   const navbarRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
@@ -190,7 +188,6 @@ export default function Navbar() {
                 label={link.label}
                 isActive={pathname === link.href}
                 index={index}
-                isScrolled={isScrolled}
               />
             ))}
           </motion.nav>
@@ -252,13 +249,11 @@ function NavLink({
   label,
   isActive,
   index,
-  isScrolled,
 }: {
   href: string;
   label: string;
   isActive: boolean;
   index: number;
-  isScrolled: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const linkRef = useRef<HTMLAnchorElement>(null);

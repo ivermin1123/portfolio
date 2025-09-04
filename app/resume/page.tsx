@@ -1,3 +1,4 @@
+"use client";
 import { PDFViewer, Section } from "@/components";
 
 export default function ResumePage() {
