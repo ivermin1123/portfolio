@@ -1,0 +1,335 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact",
+    "work": "Work",
+    "blog": "Blog"
+  },
+  "hero": {
+    "name": "Hoang Le",
+    "title": "Senior Frontend Engineer — React, Next.js, TypeScript",
+    "subtitle": "Crafting",
+    "immersive": "immersive experiences",
+    "motion": "motion design",
+    "modern": "modern web tech",
+    "viewProjects": "View Projects",
+    "resume": "Resume",
+    "scrollToExplore": "Scroll to explore"
+  },
+  "sections": {
+    "projects": {
+      "title": "Projects",
+      "subtitle": "Selected works with motion & polish."
+    },
+    "skills": {
+      "title": "Skills & Tools",
+      "subtitle": "My daily toolbox and strengths."
+    },
+    "experience": {
+      "title": "Experience",
+      "subtitle": "Highlights across roles."
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "Engineer. Motion nerd. Product thinker."
+    },
+    "contact": {
+      "title": "Let's Connect",
+      "subtitle": "Ready to build something amazing together?"
+    }
+  },
+  "about": {
+    "title": "Engineer. Motion nerd. Product thinker.",
+    "description1": "I craft fast, accessible interfaces with a big focus on motion, micro‑interactions, and design systems. I love turning ambiguous product ideas into polished experiences that users actually enjoy using.",
+    "description2": "When I'm not coding, you'll find me exploring new technologies, contributing to open source, or perfecting my coffee brewing technique. I believe great software should feel like magic ✨",
+    "availableForHire": "Available for hire! 🚀",
+    "stats": {
+      "yearsExperience": "5+",
+      "yearsLabel": "Years Experience",
+      "projectsShipped": "20+",
+      "projectsLabel": "Projects Shipped"
+    },
+    "cta": {
+      "workTogether": "Let's work together",
+      "viewResume": "View Resume"
+    },
+    "interestsTitle": "What makes me tick ⚡",
+    "interests": {
+      "coffee": "Coffee addict ☕",
+      "music": "Lo-fi beats 🎵",
+      "opensource": "Open source 🚀",
+      "design": "Design systems 🎨",
+      "technology": "Space exploration 🛸",
+      "ux": "User experience ❤️"
+    },
+    "funFactsTitle": "Fun facts about me 🎭",
+    "funFacts": {
+      "debugging": "I can debug CSS while sleepwalking 😴",
+      "codeStyle": "My code has more emojis than comments 🎭",
+      "problemSolving": "I once fixed a bug by dreaming about it 💭",
+      "react": "React hooks are my love language 💕",
+      "languages": "I speak fluent TypeScript and broken English 🗣️"
+    }
+  },
+  "projects": {
+    "onboardingChecklist": {
+      "title": "Onboarding Checklist Accelerator",
+      "category": "Web",
+      "summary": "Self‑serve digital onboarding flow reducing setup time by ~50%.",
+      "highlights": ["Schema‑driven forms", "Edge cached pages", "a11y score 100"]
+    },
+    "uiLibrary": {
+      "title": "UI Library Standardization (\"Snowflakes\")",
+      "category": "Tools",
+      "summary": "Refactored internal design system; eliminated 50+ inconsistencies.",
+      "highlights": ["Theming tokens", "Variants API", "Automated visual tests"]
+    },
+    "healthcareApp": {
+      "title": "Healthcare Web Application",
+      "category": "Web",
+      "summary": "Complex healthcare management system with stakeholder alignment and A/B testing.",
+      "highlights": [
+        "Acceptance criteria definition",
+        "4-member team leadership",
+        "Unit & A/B testing"
+      ]
+    },
+    "carInsurance": {
+      "title": "Car Insurance & Dentist Management",
+      "category": "Web",
+      "summary": "Multi-system management platform with budget optimization and performance requirements.",
+      "highlights": ["QA collaboration", "Library evaluation", "Stand-up facilitation"]
+    },
+    "solarEnergy": {
+      "title": "Solar Energy Sale System",
+      "category": "Web",
+      "summary": "Full-stack energy management platform with AWS automation and customer integration.",
+      "highlights": [
+        "API integration",
+        "AWS deployment automation",
+        "Customer requirement finalization"
+      ]
+    },
+    "constructionManagement": {
+      "title": "Construction Enterprise Management",
+      "category": "Web",
+      "summary": "Enterprise management system with chat functionality and user feedback systems.",
+      "highlights": [
+        "Database schema design",
+        "Chat system development",
+        "20% user satisfaction improvement"
+      ]
+    }
+  },
+  "skills": {
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "tools": "Tools & Platforms",
+    "languages": "Programming Languages"
+  },
+  "experience": {
+    "current": "Current",
+    "present": "Present",
+    "categories": {
+      "all": "All",
+      "engineering": "Engineering",
+      "leadership": "Leadership",
+      "innovation": "Innovation"
+    },
+    "sections": {
+      "technologiesUsed": "Technologies Used",
+      "keyAchievements": "Key Achievements",
+      "recognitionAwards": "Recognition & Awards",
+      "viewDetails": "View Details",
+      "fullResume": "Full Resume"
+    },
+    "items": {
+      "employmentHero": {
+        "id": "employment-hero",
+        "title": "Software Engineer",
+        "company": "Employment Hero",
+        "location": "Vietnam",
+        "period": "June 2022 – Present",
+        "duration": "3+ years",
+        "description": "Led frontend architecture and technical planning for a 4-developer squad, providing mentorship via comprehensive code reviews and technical training, and driving critical project decisions.",
+        "achievements": [
+          "Led frontend architecture and technical planning for a 4-developer squad",
+          "Engineered digital onboarding checklist reducing setup time by 50%",
+          "Enhanced code quality by implementing rigorous coding standards and upgrading testing frameworks",
+          "Championed 'Snowflakes' initiative to standardize internal UI library components, resolving 50+ inconsistencies"
+        ],
+        "tech": [
+          "React.js",
+          "Next.js",
+          "TypeScript",
+          "Redux",
+          "React Native",
+          "Jest",
+          "React Hook Form",
+          "React Query"
+        ],
+        "recognition": [
+          "🏆 Led 4-developer squad with mentorship and technical training",
+          "🚀 50% reduction in organization setup time",
+          "💡 Resolved 50+ UI library inconsistencies",
+          "⚡ Optimized test execution and CI resource utilization"
+        ],
+        "impact": "Reduced onboarding time by 50%, improved code quality, mentored 4 developers",
+        "category": "Leadership"
+      },
+      "fptSoftware": {
+        "id": "fpt-software",
+        "title": "Software Developer",
+        "company": "FPT Software",
+        "location": "Vietnam",
+        "period": "Nov 2021 – Jun 2022",
+        "duration": "8 months",
+        "description": "Analyzed complex business requirements and user stories to define precise acceptance criteria. Maintained direct stakeholder communication for effective requirement clarification.",
+        "achievements": [
+          "Analyzed complex business requirements and defined precise acceptance criteria",
+          "Maintained direct stakeholder communication for effective requirement clarification",
+          "Mentored and led a 4-member development team",
+          "Oversaw unit test creation and successful A/B test implementations"
+        ],
+        "tech": ["React.js", "TypeScript", "Redux", "Google OAuth", "Jest"],
+        "recognition": [
+          "👥 Led 4-member development team",
+          "📊 Successful A/B test implementations",
+          "🔧 Comprehensive unit test coverage",
+          "💼 Effective stakeholder communication"
+        ],
+        "impact": "Led 4-member team, improved testing coverage, enhanced stakeholder communication",
+        "category": "Engineering"
+      },
+      "favieTech": {
+        "id": "favie-tech",
+        "title": "Software Developer",
+        "company": "Favie Tech",
+        "location": "Vietnam",
+        "period": "Mar 2021 – Nov 2021",
+        "duration": "8 months",
+        "description": "Collaborated with testers to debug and resolve issues. Evaluated and recommended optimal technical libraries, ensuring adherence to project budget and performance requirements.",
+        "achievements": [
+          "Collaborated with testers to debug and resolve issues",
+          "Evaluated and recommended optimal technical libraries",
+          "Ensured adherence to project budget and performance requirements",
+          "Managed team activities and facilitated daily stand-up meetings"
+        ],
+        "tech": ["Angular 12", "Node.js", "NestJS", "RxJS", "Firebase"],
+        "recognition": [
+          "🔍 Effective debugging and issue resolution",
+          "📚 Technical library evaluation expertise",
+          "💰 Budget and performance optimization",
+          "👥 Team management and stand-up facilitation"
+        ],
+        "impact": "Improved debugging processes, optimized library selection, managed team activities",
+        "category": "Engineering"
+      },
+      "designveloper": {
+        "id": "designveloper",
+        "title": "Software Developer",
+        "company": "Designveloper",
+        "location": "Vietnam",
+        "period": "Dec 2020 – Mar 2021",
+        "duration": "4 months",
+        "description": "Developed data structures and integrated React applications with server APIs. Automated deployment processes using AWS services and finalized project requirements with customers.",
+        "achievements": [
+          "Developed data structures and integrated React applications with server APIs",
+          "Automated deployment processes using AWS services",
+          "Finalized project requirements and solutions with customers",
+          "Implemented comprehensive full-stack solutions"
+        ],
+        "tech": [
+          "React.js",
+          "Next.js",
+          "NestJS",
+          "MongoDB",
+          "SCSS",
+          "Redux",
+          "AWS",
+          "TypeScript",
+          "RxJS"
+        ],
+        "recognition": [
+          "🔗 Seamless API integration expertise",
+          "☁️ AWS deployment automation",
+          "🤝 Customer requirement finalization",
+          "🏗️ Full-stack development capabilities"
+        ],
+        "impact": "Automated deployments, improved API integration, enhanced customer collaboration",
+        "category": "Engineering"
+      },
+      "trixgo": {
+        "id": "trixgo",
+        "title": "Software Developer",
+        "company": "Trixgo",
+        "location": "Vietnam",
+        "period": "Sep 2020 – Dec 2020",
+        "duration": "4 months",
+        "description": "Designed database schemas and implemented functional components. Developed and enhanced UI, including a chat system, improving user satisfaction by 20%.",
+        "achievements": [
+          "Designed database schemas and implemented functional components",
+          "Developed and enhanced UI, including a chat system",
+          "Improved user satisfaction by 20%",
+          "Created systems for user feedback and website improvement"
+        ],
+        "tech": [
+          "Node.js",
+          "MongoDB",
+          "Amazon Web Services",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "jQuery"
+        ],
+        "recognition": [
+          "🗄️ Database schema design expertise",
+          "💬 Chat system development",
+          "📈 20% improvement in user satisfaction",
+          "💭 User feedback system implementation"
+        ],
+        "impact": "Improved user satisfaction by 20%, designed robust database schemas, enhanced UI/UX",
+        "category": "Engineering"
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's build something great",
+    "subtitle": "Drop a message — I'll get back soon.",
+    "description1": "I'm always excited to work on new projects, collaborate with talented teams, or just chat about the latest in web development and design.",
+    "description2": "Whether you have a project in mind, want to discuss technology, or just want to say hello, I'd love to hear from you! 🚀",
+    "getInTouch": "Get in touch",
+    "viewResume": "View Resume",
+    "connectDirectly": "Or connect with me directly:",
+    "preferEmail": "Prefer email?",
+    "findMeOnline": "Find me online",
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "message": "Tell me about your project…",
+      "send": "Send message",
+      "sending": "Sending...",
+      "success": "Thanks! Your message was sent 🎉",
+      "error": "Oops, something went wrong."
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts, insights, and tutorials",
+    "comingSoon": "Coming Soon",
+    "description": "I'm working on some interesting content. Check back soon for articles about web development, design systems, and the latest in frontend technology."
+  },
+  "common": {
+    "viewMore": "View More",
+    "learnMore": "Learn More",
+    "download": "Download",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "highlights": "Highlights"
+  }
+}

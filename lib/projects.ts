@@ -1,4 +1,3 @@
-
 export type Project = {
   slug: string;
   title: string;
@@ -12,29 +11,66 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "onboarding-checklist-accelerator",
-    title: "Onboarding Checklist Accelerator",
+    title: "onboardingChecklist",
     category: "Web",
-    summary: "Self‑serve digital onboarding flow reducing setup time by ~50%.",
-    tech: ["Next.js", "TypeScript", "React Hook Form", "Jest"],
-    highlights: ["Schema‑driven forms", "Edge cached pages", "a11y score 100"],
-    links: {}
+    summary: "onboardingChecklist",
+    tech: ["React.js", "Next.js", "TypeScript", "React Hook Form", "Jest"],
+    highlights: ["onboardingChecklist"],
+    links: {},
   },
   {
     slug: "ui-library-standardization",
-    title: "UI Library Standardization (\"Snowflakes\")",
+    title: "uiLibrary",
     category: "Tools",
-    summary: "Refactored internal design system; eliminated 50+ inconsistencies.",
-    tech: ["React", "Storybook", "shadcn/ui"],
-    highlights: ["Theming tokens", "Variants API", "Automated visual tests"],
-    links: {}
+    summary: "uiLibrary",
+    tech: ["React.js", "TypeScript", "Storybook", "shadcn/ui"],
+    highlights: ["uiLibrary"],
+    links: {},
   },
   {
-    slug: "herobot-ai-console",
-    title: "HeroBot AI Console",
-    category: "AI",
-    summary: "AI‑assisted ops dashboard with prompt orchestration & evals.",
-    tech: ["Next.js", "TypeScript", "Framer Motion", "Zod"],
-    highlights: ["Semantic search", "Operator handoff", "Audit trails"],
-    links: {}
-  }
+    slug: "healthcare-web-application",
+    title: "healthcareApp",
+    category: "Web",
+    summary: "healthcareApp",
+    tech: ["React.js", "TypeScript", "Redux", "Google OAuth", "Jest"],
+    highlights: ["healthcareApp"],
+    links: {},
+  },
+  {
+    slug: "car-insurance-management",
+    title: "carInsurance",
+    category: "Web",
+    summary: "carInsurance",
+    tech: ["Angular 12", "Node.js", "NestJS", "RxJS", "Firebase"],
+    highlights: ["carInsurance"],
+    links: {},
+  },
+  {
+    slug: "solar-energy-sale-system",
+    title: "solarEnergy",
+    category: "Web",
+    summary: "solarEnergy",
+    tech: [
+      "React.js",
+      "Next.js",
+      "NestJS",
+      "MongoDB",
+      "SCSS",
+      "Redux",
+      "AWS",
+      "TypeScript",
+      "RxJS",
+    ],
+    highlights: ["solarEnergy"],
+    links: {},
+  },
+  {
+    slug: "construction-management-system",
+    title: "constructionManagement",
+    category: "Web",
+    summary: "constructionManagement",
+    tech: ["Node.js", "MongoDB", "Amazon Web Services", "JavaScript", "HTML", "CSS", "jQuery"],
+    highlights: ["constructionManagement"],
+    links: {},
+  },
 ];

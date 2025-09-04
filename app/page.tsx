@@ -1,103 +1,118 @@
-
-import Hero from "@/components/hero";
-import Section from "@/components/section";
-import { projects } from "@/lib/projects";
-import ProjectCard from "@/components/project-card";
-import SocialLinks from "@/components/social-links";
+"use client";
 import Link from "next/link";
-import { Progress } from "@/components/ui/progress";
+
+import {
+  AboutSection,
+  ExperienceTimeline,
+  Hero,
+  ProjectCard,
+  Section,
+  SkillsSection,
+  SocialLinks,
+} from "@/components";
+import { projects } from "@/lib/projects";
+import { useTranslations } from "@/lib/useTranslations";
 
 export default function Page() {
+  const { t } = useTranslations();
+
   return (
     <>
       {/* Immersive hero */}
       <Hero />
 
       {/* Projects */}
-      <Section id="projects" title="Projects" subtitle="Selected works with motion & polish.">
+      <Section
+        id="projects"
+        title={t("sections.projects.title")}
+        subtitle={t("sections.projects.subtitle")}
+      >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => <ProjectCard key={p.slug} project={p} />)}
+          {projects.map(p => (
+            <ProjectCard key={p.slug} project={p} />
+          ))}
         </div>
       </Section>
 
       {/* Skills */}
-      <Section id="skills" title="Skills & Tools" subtitle="My daily toolbox and strengths.">
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border p-6">
-            <h3 className="mb-4 font-semibold">Frontend</h3>
-            <div className="space-y-3">
-              <Skill name="React / Next.js" value={95} />
-              <Skill name="TypeScript" value={90} />
-              <Skill name="State Mgmt (Redux/Context)" value={88} />
-              <Skill name="Testing (Jest/RTL)" value={85} />
-            </div>
-          </div>
-          <div className="rounded-2xl border p-6">
-            <h3 className="mb-4 font-semibold">DevOps & DX</h3>
-            <div className="space-y-3">
-              <Skill name="CI/CD (GitHub/CircleCI)" value={80} />
-              <Skill name="Performance & a11y" value={90} />
-              <Skill name="Design Systems (shadcn/ui)" value={88} />
-              <Skill name="Node/Nest basics" value={70} />
-            </div>
-          </div>
-        </div>
+      <Section
+        id="skills"
+        title={t("sections.skills.title")}
+        subtitle={t("sections.skills.subtitle")}
+      >
+        <SkillsSection />
       </Section>
 
       {/* Experience */}
-      <Section id="experience" title="Experience" subtitle="Highlights across roles.">
-        <ul className="grid gap-4 md:grid-cols-2">
-          <li className="rounded-2xl border p-6">
-            <h3 className="text-lg font-semibold">Software Engineer — Employment Hero</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Jun 2022 – Present</p>
-            <ul className="mt-3 list-inside list-disc text-sm text-muted-foreground space-y-1">
-              <li>Led FE architecture for a 4‑dev squad; mentorship via reviews & training</li>
-              <li>Shipped digital onboarding checklist; reduced org setup time by ~50%</li>
-              <li>Upgraded testing & CI; cut test time & costs</li>
-            </ul>
-          </li>
-          <li className="rounded-2xl border p-6">
-            <h3 className="text-lg font-semibold">Software Developer — FPT Software</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Nov 2021 – Jun 2022</p>
-            <ul className="mt-3 list-inside list-disc text-sm text-muted-foreground space-y-1">
-              <li>Defined acceptance criteria and led 4‑member team</li>
-              <li>Unit tests & A/B tests with stakeholder alignment</li>
-            </ul>
-          </li>
-        </ul>
-        <div className="mt-6">
-          <Link className="text-sm underline" href="/experience">See full timeline →</Link>
-        </div>
+      <Section
+        id="experience"
+        title={t("sections.experience.title")}
+        subtitle={t("sections.experience.subtitle")}
+      >
+        <ExperienceTimeline />
       </Section>
 
-      {/* About & Contact CTA */}
-      <Section id="about" title="About Me" subtitle="Engineer. Motion nerd. Product thinker.">
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          <div className="aspect-square w-full overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/20 to-accent/20" />
-          <div>
-            <p className="text-muted-foreground">
-              I craft fast, accessible interfaces with a big focus on motion, micro‑interactions, and design systems.
-              I love turning ambiguous product ideas into polished experiences.
-            </p>
-            <div className="mt-6 flex items-center gap-4">
-              <SocialLinks />
-              <Link className="text-sm underline" href="/contact">Get in touch →</Link>
+      {/* About */}
+      <Section id="about" title={t("sections.about.title")} subtitle={t("sections.about.subtitle")}>
+        <AboutSection />
+      </Section>
+
+      {/* Contact CTA */}
+      <Section
+        id="contact"
+        title={t("sections.contact.title")}
+        subtitle={t("sections.contact.subtitle")}
+      >
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl dark:from-cyan-500/10 dark:to-purple-500/10"></div>
+            <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl dark:from-purple-500/10 dark:to-pink-500/10"></div>
+          </div>
+
+          {/* Main content */}
+          <div className="relative bg-gradient-to-br from-gray-50 to-white dark:from-slate-900/50 dark:to-slate-800/50 rounded-3xl border-2 border-gray-200 dark:border-white/10 p-12 shadow-lg dark:shadow-slate-900/20">
+            <div className="text-center space-y-10 max-w-4xl mx-auto">
+              {/* Description */}
+              <div className="space-y-6">
+                <p className="text-xl text-gray-700 dark:text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                  {t("contact.description1")}
+                </p>
+
+                <p className="text-lg text-gray-600 dark:text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto">
+                  {t("contact.description2")}
+                </p>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link
+                  href="/contact"
+                  className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-500 dark:to-purple-500 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl hover:shadow-blue-500/25 dark:hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
+                >
+                  <span className="relative z-10">{t("contact.getInTouch")}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-500 dark:to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Link>
+
+                <Link
+                  href="/resume"
+                  className="px-10 py-4 border-2 border-gray-200 dark:border-white/20 bg-white dark:bg-white/5 text-gray-700 dark:text-white rounded-2xl font-semibold text-lg hover:bg-gray-50 dark:hover:bg-white/10 hover:border-gray-300 dark:hover:border-white/30 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+                >
+                  {t("contact.viewResume")}
+                </Link>
+              </div>
+
+              {/* Additional info */}
+              <div className="pt-8 border-t border-gray-200 dark:border-white/10">
+                <p className="text-sm text-gray-500 dark:text-muted-foreground mb-6">
+                  {t("contact.connectDirectly")}
+                </p>
+                <SocialLinks />
+              </div>
             </div>
           </div>
         </div>
       </Section>
     </>
-  );
-}
-
-function Skill({ name, value }: { name: string; value: number }) {
-  return (
-    <div>
-      <div className="mb-1 flex items-center justify-between text-sm">
-        <span>{name}</span>
-        <span className="text-muted-foreground">{value}%</span>
-      </div>
-      <Progress value={value} />
-    </div>
   );
 }
