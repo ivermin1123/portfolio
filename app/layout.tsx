@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
-import { ClientLayout, VercelAnalytics } from "@/components";
+import { ClientLayout, StructuredData, VercelAnalytics } from "@/components";
 import { SITE } from "@/lib/seo";
 
 import "./globals.css";
@@ -21,7 +21,20 @@ export const metadata: Metadata = {
     "web developer",
     "portfolio",
     "Hoang Le",
+    "senior frontend engineer",
+    "javascript developer",
+    "ui developer",
+    "web applications",
+    "responsive design",
+    "modern web development",
+    "frontend architecture",
+    "react portfolio",
+    "nextjs portfolio",
+    "developer portfolio vietnam",
   ],
+  category: "Technology",
+  classification: "Portfolio",
+  referrer: "origin-when-cross-origin",
   authors: [{ name: SITE.name }],
   creator: SITE.name,
   openGraph: {
@@ -36,16 +49,30 @@ export const metadata: Metadata = {
         url: SITE.ogImage,
         width: 1200,
         height: 630,
-        alt: SITE.name,
+        alt: `${SITE.name} - ${SITE.role} Portfolio`,
+        type: "image/jpeg",
       },
     ],
+    countryName: "Vietnam",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE.name,
-    description: SITE.tagline,
-    images: [SITE.ogImage],
-    creator: "@hoangle_dev", // Update with your Twitter handle
+  other: {
+    "linkedin:profile": "https://linkedin.com/in/ivermin1123",
+    "facebook:profile": "https://facebook.com/yivermin1123",
+    "instagram:profile": "https://instagram.com/ivermin1123",
+    "profile:linkedin": "https://linkedin.com/in/ivermin1123",
+    "profile:facebook": "https://facebook.com/ivermin1123",
+    "profile:instagram": "https://instagram.com/ivermin1123",
+    "article:author": "Hoang Le",
+    "article:publisher": "https://hoangle.xyz",
+    "theme-color": "#000000",
+    "msapplication-TileColor": "#000000",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "format-detection": "telephone=no",
+    "mobile-web-app-capable": "yes",
+    "application-name": "Hoang Le Portfolio",
+    "msapplication-tooltip": "Hoang Le - Senior Frontend Engineer Portfolio",
+    "msapplication-starturl": "/",
   },
   robots: {
     index: true,
@@ -60,13 +87,15 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "XK1SmGtmdwvEc5MMQ48bn65an3iMGt0couYZlKKWimQ",
-    // yandex: "your-yandex-verification-code", // Add when you have it
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <StructuredData />
+      </head>
       <body suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <ClientLayout>{children}</ClientLayout>
