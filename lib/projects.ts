@@ -28,6 +28,15 @@ export const projects: Project[] = [
     links: {},
   },
   {
+    slug: "testing-pipeline-optimization",
+    title: "testingPipeline",
+    category: "Tools",
+    summary: "testingPipeline",
+    tech: ["Jest", "CI/CD", "Testing Frameworks"],
+    highlights: ["testingPipeline"],
+    links: {},
+  },
+  {
     slug: "healthcare-web-application",
     title: "healthcareApp",
     category: "Web",

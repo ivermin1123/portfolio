@@ -6,7 +6,8 @@ export function StructuredData() {
     "@type": "Person",
     name: SITE.name,
     jobTitle: SITE.role,
-    description: SITE.tagline,
+    description:
+      "Hoang Le is a Senior Frontend Engineer specializing in React, Next.js, Angular, and scalable UI architecture. With experience leading engineering squads, standardizing design systems, improving CI pipelines, and delivering high-impact product features, he builds modern, performant, and intuitive web applications for global users.",
     url: SITE.url,
     image: `${SITE.url}${SITE.ogImage}`,
     sameAs: [
@@ -19,11 +20,16 @@ export function StructuredData() {
       "Frontend Development",
       "React",
       "Next.js",
+      "Angular",
       "TypeScript",
       "JavaScript",
       "Web Development",
-      "UI/UX Design",
-      "Responsive Design",
+      "UI Architecture",
+      "Design Systems",
+      "Scalable UI Systems",
+      "Product-Driven Engineering",
+      "Frontend Architecture",
+      "Performance Optimization",
     ],
     alumniOf: "Software Engineering",
     worksFor: {

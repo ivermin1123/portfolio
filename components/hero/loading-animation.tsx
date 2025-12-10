@@ -21,7 +21,7 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
 
   // Start loading animation
   useEffect(() => {
-    const duration = 3000; // 3 seconds total
+    const duration = 1500; // 1.5 seconds total (reduced from 3s)
     const startTime = Date.now();
 
     // Fallback timeout to ensure completion
@@ -33,9 +33,9 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
           if (mountedRef.current) {
             onCompleteRef.current();
           }
-        }, 500);
+        }, 300);
       }
-    }, duration + 1000); // 4 seconds total (3s + 1s buffer)
+    }, duration + 500); // 2 seconds total (1.5s + 0.5s buffer)
 
     const updateProgress = () => {
       if (!mountedRef.current) return;
@@ -67,9 +67,9 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
               if (mountedRef.current) {
                 onCompleteRef.current();
               }
-            }, 500);
+            }, 300);
           }
-        }, 200);
+        }, 100);
       }
     };
 

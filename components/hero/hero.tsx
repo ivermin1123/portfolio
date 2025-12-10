@@ -8,7 +8,6 @@ import { AnimatedText, GradientBg, Particles } from "@/components";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/lib/useTranslations";
 
-
 export default function Hero() {
   const { t } = useTranslations();
 
@@ -52,7 +51,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         className="container relative z-10 text-center"
       >
         {/* Main title with staggered animation */}
@@ -60,13 +59,13 @@ export default function Hero() {
           className="text-6xl font-black leading-tight tracking-tight md:text-8xl lg:text-9xl"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <motion.span
             className="gradient-text"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
           >
             {t("hero.name")}
           </motion.span>
@@ -77,7 +76,7 @@ export default function Hero() {
           className="mt-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
           <p className="text-xl text-gray-700 md:text-2xl dark:text-gray-300">
             <AnimatedText text={t("hero.title")} />
@@ -89,7 +88,7 @@ export default function Hero() {
           className="mt-4 text-lg text-gray-600 md:text-xl dark:text-gray-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
         >
           {t("hero.subtitle")}{" "}
           <span className="text-cyan-500 dark:text-cyan-400 text-blue-600">
@@ -108,7 +107,7 @@ export default function Hero() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
@@ -148,7 +147,7 @@ export default function Hero() {
           className="mt-16 flex flex-col items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}

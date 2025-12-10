@@ -12,10 +12,10 @@
   "hero": {
     "name": "Hoang Le",
     "title": "Senior Frontend Engineer — React, Next.js, TypeScript",
-    "subtitle": "Crafting",
-    "immersive": "immersive experiences",
-    "motion": "motion design",
-    "modern": "modern web tech",
+    "subtitle": "Engineering calm into",
+    "immersive": "fast-moving products",
+    "motion": "system thinking",
+    "modern": "delightful user experience",
     "viewProjects": "View Projects",
     "resume": "Resume",
     "scrollToExplore": "Scroll to explore"
@@ -35,7 +35,7 @@
     },
     "about": {
       "title": "About Me",
-      "subtitle": "Engineer. Product thinker."
+      "subtitle": "Building clarity in a world full of complexity."
     },
     "contact": {
       "title": "Let's Connect",
@@ -43,9 +43,11 @@
     }
   },
   "about": {
-    "title": "Engineer. Product thinker.",
-    "description1": "I craft fast, accessible interfaces with a big focus on motion, micro‑interactions, and design systems. I love turning ambiguous product ideas into polished experiences that users actually enjoy using.",
-    "description2": "When I'm not coding, you'll find me exploring new technologies, contributing to open source, or perfecting my coffee brewing technique. I believe great software should feel like magic ✨",
+    "title": "About Me",
+    "description1": "I'm Hoang Le — a Senior Frontend Engineer from Vietnam who thrives on transforming complex systems into simple, intuitive experiences. I believe that great software is built on clarity: clear thinking, clear structure, and a clear sense of purpose.",
+    "description2": "Over the years, I've worked across startups, outsourcing companies, and global product teams. These environments taught me how to think beyond features — to understand architecture, maintainability, user experience, and how engineering decisions ripple across an entire product.",
+    "description3": "As my career grew, I found my core strength: building scalable UI systems that empower teams, reduce friction, and elevate product quality.",
+    "description4": "Today, I focus on frontend architecture, performance, design systems, and product-driven engineering — always aiming to create experiences that feel natural, thoughtful, and effortless.",
     "availableForHire": "Available for hire! 🚀",
     "stats": {
       "yearsExperience": "5+",
@@ -73,20 +75,59 @@
       "problemSolving": "I once fixed a bug by dreaming about it 💭",
       "react": "React hooks are my love language 💕",
       "languages": "I speak fluent TypeScript and broken English 🗣️"
+    },
+    "journey": {
+      "title": "My Journey",
+      "earlyFoundations": {
+        "title": "Early Foundations",
+        "description": "My career began with a curiosity for how interfaces behave — how tiny details shape user experience. I explored everything from backend logic to cloud automation, and slowly learned how each layer influences the final product."
+      },
+      "learningToTranslate": {
+        "title": "Learning to Translate Requirements",
+        "description": "At FPT Software, I learned how to translate unclear requirements into precise acceptance criteria. This was the phase where I sharpened one of my strongest skills today: bridging product thinking and engineering clarity."
+      },
+      "growingThroughOwnership": {
+        "title": "Growing Through Ownership",
+        "description": "At Favie Tech, I learned how products live in the real world: budgets, timelines, stakeholders, trade-offs. This understanding became essential in every decision I make today."
+      },
+      "levelingUp": {
+        "title": "Leveling Up as a System Thinker",
+        "description": "At Employment Hero, everything matured: leadership, architecture, code quality, product impact. I didn't just build features — I shaped systems, mentored engineers, standardized UI patterns, and improved internal workflows. This journey made me who I am as an engineer: disciplined, intentional, and deeply focused on creating systems that scale."
+      }
+    },
+    "philosophy": {
+      "title": "My Engineering Philosophy",
+      "principles": [
+        "Simplicity is the highest form of refinement.",
+        "A good system makes other people's work easier.",
+        "Great UI is invisible — it feels natural without explaining itself.",
+        "Impact matters more than complexity.",
+        "Every detail compounds — both the good and the messy ones."
+      ]
     }
   },
   "projects": {
     "onboardingChecklist": {
-      "title": "Onboarding Checklist Accelerator",
+      "title": "Digital Onboarding Checklist — Employment Hero",
       "category": "Web",
-      "summary": "Self‑serve digital onboarding flow reducing setup time by ~50%.",
-      "highlights": ["Schema‑driven forms", "Edge cached pages", "a11y score 100"]
+      "summary": "This project reshaped how I think about product impact. The original onboarding flow had too many steps, causing friction for new organizations. Working closely with product and design, I dissected every pain point, rebuilt the flow, and redesigned the entire checklist experience. The outcome was a 50% reduction in setup time, enabling customers to reach value significantly faster. This wasn't just UI work — it was systems thinking, user empathy, and architectural clarity coming together.",
+      "highlights": [
+        "50% reduction in setup time",
+        "Systems thinking & user empathy",
+        "Architectural clarity",
+        "Product-driven engineering"
+      ]
     },
     "uiLibrary": {
-      "title": "UI Library Standardization (\"Snowflakes\")",
+      "title": "Snowflakes Initiative — Internal UI Standardization",
       "category": "Tools",
-      "summary": "Refactored internal design system; eliminated 50+ inconsistencies.",
-      "highlights": ["Theming tokens", "Variants API", "Automated visual tests"]
+      "summary": "Before this initiative, every team built UI components slightly differently: spacing, colors, states, behaviors — all inconsistent. I proposed and led the Snowflakes Initiative to unify the internal UI library. I audited components, rebuilt patterns, documented standards, and aligned teams on a single UI language. The impact: 50+ inconsistencies resolved, cleaner code reviews, faster development cycles, and a unified design identity across the product. This is the kind of work that strengthens a product from the inside out.",
+      "highlights": [
+        "50+ inconsistencies resolved",
+        "Unified design identity",
+        "Faster development cycles",
+        "Cleaner code reviews"
+      ]
     },
     "healthcareApp": {
       "title": "Healthcare Web Application",
@@ -96,6 +137,17 @@
         "Acceptance criteria definition",
         "4-member team leadership",
         "Unit & A/B testing"
+      ]
+    },
+    "testingPipeline": {
+      "title": "Testing Pipeline Optimization",
+      "category": "Tools",
+      "summary": "Our testing pipeline was slowing the team down — each run took 4–5 minutes. I reworked the testing configuration, optimized the framework, and reduced execution time while lowering CI costs. Invisible improvements often deliver the biggest impact. This upgrade helped the entire team ship faster without touching a single user-facing feature.",
+      "highlights": [
+        "Reduced execution time",
+        "Lower CI costs",
+        "Faster team velocity",
+        "Invisible infrastructure improvements"
       ]
     },
     "carInsurance": {

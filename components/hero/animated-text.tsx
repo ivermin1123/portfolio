@@ -10,7 +10,7 @@ export default function AnimatedText({ text }: { text: string }) {
           key={i}
           variants={{
             hidden: { opacity: 0, y: 8 },
-            show: { opacity: 1, y: 0, transition: { delay: i * 0.03 } },
+            show: { opacity: 1, y: 0, transition: { delay: i * 0.015, duration: 0.3 } },
           }}
           className="inline-block"
         >

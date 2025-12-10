@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "@/lib/useTranslations";
 
-
 export default function AboutSection() {
   const { t } = useTranslations();
 
@@ -158,6 +157,26 @@ export default function AboutSection() {
             >
               {t("about.description2")}
             </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              viewport={{ once: true }}
+              className="text-gray-700 leading-relaxed dark:text-gray-300"
+            >
+              {t("about.description3")}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              viewport={{ once: true }}
+              className="text-gray-700 leading-relaxed dark:text-gray-300"
+            >
+              {t("about.description4")}
+            </motion.p>
           </div>
 
           {/* Quick stats */}
@@ -249,7 +268,7 @@ export default function AboutSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="group"
             >
-              <Card className="relative overflow-hidden border-0 bg-white border-2 border-gray-100 p-6 shadow-sm hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:border-gray-200 dark:bg-slate-900/80 dark:border-white/20 dark:hover:border-white/30 dark:hover:shadow-purple-500/20">
+              <Card className="relative overflow-hidden bg-white border-2 border-gray-100 p-6 shadow-sm hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:border-gray-200 dark:bg-slate-900/80 dark:border-white/20 dark:hover:border-white/30 dark:hover:shadow-purple-500/20">
                 <CardContent className="p-0 text-center">
                   <motion.div
                     className={`mx-auto mb-4 rounded-xl bg-gradient-to-r ${interest.color} p-3 text-white shadow-lg`}
@@ -302,6 +321,89 @@ export default function AboutSection() {
               <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">{fact}</span>
             </motion.div>
           ))}
+        </div>
+      </motion.div>
+
+      {/* Journey Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+        viewport={{ once: true }}
+        className="space-y-8 rounded-3xl bg-gradient-to-br from-gray-50 via-white to-gray-100 border-2 border-gray-200 p-10 shadow-lg dark:bg-gradient-to-br dark:from-slate-900/80 dark:via-slate-800/80 dark:to-slate-900/80 dark:border-white/20 dark:shadow-purple-500/10"
+      >
+        <h3 className="text-center text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          {t("about.journey.title")}
+        </h3>
+
+        <div className="space-y-8">
+          <div>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t("about.journey.earlyFoundations.title")}
+            </h4>
+            <p className="text-gray-700 leading-relaxed dark:text-gray-300">
+              {t("about.journey.earlyFoundations.description")}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t("about.journey.learningToTranslate.title")}
+            </h4>
+            <p className="text-gray-700 leading-relaxed dark:text-gray-300">
+              {t("about.journey.learningToTranslate.description")}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t("about.journey.growingThroughOwnership.title")}
+            </h4>
+            <p className="text-gray-700 leading-relaxed dark:text-gray-300">
+              {t("about.journey.growingThroughOwnership.description")}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t("about.journey.levelingUp.title")}
+            </h4>
+            <p className="text-gray-700 leading-relaxed dark:text-gray-300">
+              {t("about.journey.levelingUp.description")}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Engineering Philosophy Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+        viewport={{ once: true }}
+        className="rounded-3xl bg-gradient-to-br from-gray-50 via-white to-gray-100 border-2 border-gray-200 p-10 shadow-lg dark:bg-gradient-to-br dark:from-slate-900/80 dark:via-slate-800/80 dark:to-slate-900/80 dark:border-white/20 dark:shadow-purple-500/10"
+      >
+        <h3 className="text-center text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          {t("about.philosophy.title")}
+        </h3>
+
+        <div className="space-y-4">
+          {Array.isArray(t("about.philosophy.principles")) &&
+            (t("about.philosophy.principles") as string[]).map(
+              (principle: string, index: number) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:bg-white/10 dark:border-white/20 dark:shadow-purple-500/10"
+                >
+                  <div className="h-2 w-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 dark:from-cyan-400 dark:to-purple-400 mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">{principle}</span>
+                </motion.div>
+              ),
+            )}
         </div>
       </motion.div>
     </div>
